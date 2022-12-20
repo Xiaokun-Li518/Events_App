@@ -1,7 +1,10 @@
 const Page = () => 
 {
     return (
-        <h1>Event1 page</h1>
+        <div>
+            <h1>Event1 page</h1>
+            
+        </div>
     )
 }
 
