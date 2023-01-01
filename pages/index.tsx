@@ -1,12 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import Link from 'next/link'
 import {HomePage} from '../src/components/home/home-page'
 
-const inter = Inter({ subsets: ['latin'] })
 
-export default function Home({ data }) {
+export default function Home({data}) {
   return (
     <div>
       <Head>
