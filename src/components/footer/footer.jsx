@@ -1,6 +1,6 @@
 export const Footer = () => {
     return ( 
         <footer> 
-            <p> © 2022 Event App - A Project Built with Next.js </p>
+            <p> © 2023 Keyu Ye- A Project Built with Next.js </p>
         </footer>);
 };
