@@ -1,13 +1,9 @@
-import Link from 'next/link'
-import Image from 'next/image'
+import {EventPerCityPage} from '../../../src/components/events/catEvent'
+
 const EventPage = ({data}) => 
 {
     return (
-        <div>
-            <Image width={1000} height={500} alt={data.title} src={data.image}/>
-            <h1>{data.title}</h1>
-            <p>{data.description}</p>
-        </div>
+        <EventPerCityPage data={data}/>
     )
 }
 
@@ -17,7 +13,6 @@ export default EventPage;
 export async function getStaticPaths()
 {
     const {allEvents} = await import ('../../../data/data.json');
-    console.log (allEvents);
     const allPaths = allEvents.map((path)=> {
         return {
             params: {
@@ -36,7 +31,6 @@ export async function getStaticPaths()
 
 export async function getStaticProps (context)
 {
-    console.log(context);
     const id = context.params.id;
     const {allEvents} = await import ('../../../data/data.json');
     const eventData = allEvents.find(ev=> id ===ev.id);

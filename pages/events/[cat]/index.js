@@ -1,19 +1,11 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import {CityEventsPage} from '../../../src/components/events/eventCard'
+
+
 
 const EventsCatPage = ({data, pageName}) => 
 {
     return (
-        <div>
-            <h1>Event in {pageName.toString().toUpperCase()}</h1>
-            {data.map(ev => (
-                <Link key={ev.id} href={`/events/${ev.city}/${ev.id}`} passHref>
-                    <Image width={300} height={300} alt={ev.title} src={ev.image}/>
-                    <h2>{ev.title}</h2>
-                    <p>{ev.description}</p>
-                </Link>
-            ))}
-        </div>
+        <CityEventsPage data={data} pageName={pageName}/>
     )
 }
 
@@ -28,7 +20,6 @@ export async function getStaticPaths() {
                 },
             };
         });
-    console.log (allPaths);
     return {
         paths: allPaths,
         fallback:false,
@@ -36,7 +27,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps (context) {
-    console.log (context);
     const id = context?.params.cat;
     const { allEvents } = await import ('../../../data/data.json');
     const data = allEvents.filter (ev => ev.city === id);
