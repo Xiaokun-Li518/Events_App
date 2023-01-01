@@ -6,7 +6,7 @@ export const Header = () => {
     <header>
       <div>
         <div className="topNav">
-          <Image alt="logo" src={'/images/fuck-off-i-mean-good-morning-square-magnet(5).jpg'} width={100} height={100} />
+          <Image alt="logo" src={'/IMG_3535.JPG'} width={100} height={100} />
           <nav>
             <ul>
               <li>
@@ -27,7 +27,7 @@ export const Header = () => {
             </ul>
           </nav>
         </div>
-        <p className="title">叶柯雨</p>
+        <p className="title">OneKeFish</p>
       </div>
     </header>
   );
